@@ -1,0 +1,46 @@
+Datos Cámara 01, ( derecha, gimbal )
+
+image_width: 640
+image_height: 480
+
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [722.942664, 0, 341.859356, 0, 724.205936, 268.268274, 0, 0, 1]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [0.050402, -0.314494, 0.011841, 0.000621, 0]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1, 0, 0, 0, 1, 0, 0, 0, 1]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [721.013855, 0, 342.340251, 0, 0, 721.839478, 270.794183, 0, 0, 0, 1, 0]
+
+
+Datos Cámara 02 ( izquerda, fija )
+
+image_width: 640
+image_height: 480
+
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [754.139105, 0, 299.67949, 0, 755.262495, 254.205511, 0, 0, 1]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [0.057704, -0.527336, 0.000756, 0.002401, 0]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1, 0, 0, 0, 1, 0, 0, 0, 1]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [747.4375, 0, 299.184705, 0, 0, 753.934143, 253.993534, 0, 0, 0, 1, 0]

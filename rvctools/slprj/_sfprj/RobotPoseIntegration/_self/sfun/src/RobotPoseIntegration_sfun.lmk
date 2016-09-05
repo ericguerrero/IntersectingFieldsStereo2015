@@ -1,0 +1,45 @@
+CC     = "C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\bin\lcc64.exe"
+LD     = "C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\bin\lcclnk64.exe"
+LIBCMD = "C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\bin\lcclib64.exe"
+CFLAGS = -dll -noregistrylookup  -c -Zp8 -DLCC_WIN64 -DMATLAB_MEX_FILE -DMX_COMPAT_32 -nodeclspec 
+LDFLAGS = -s -dll -L"C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\lib64" -entry LibMain -map sfun.map 
+LIBFLAGS = 
+
+OBJECTS = \
+	"RobotPoseIntegration_sfun.obj"\
+	"c1_RobotPoseIntegration.obj"\
+	"c2_RobotPoseIntegration.obj"\
+	"c3_RobotPoseIntegration.obj"\
+	"RobotPoseIntegration_sfun_registry.obj"\
+	"lccstub.obj"\
+	"RobotPoseIntegration_sfun.def"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\sf_runtime.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwblas.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmx.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmex.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmat.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libfixedpoint.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libut.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwmathutil.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libemlrt.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwsl_log_load_blocks.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwsimulink.lib"\
+	"C:\Program Files\MATLAB\R2014b\lib\win64\libmwipp.lib"\
+
+INCLUDE_PATH= -I"C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\include64"  -I"C:\Program Files\MATLAB\R2014b\extern\include"  -I"C:\Program Files\MATLAB\R2014b\simulink\include"  -I"C:\Program Files\MATLAB\R2014b\stateflow\c\mex\include"  -I"C:\Program Files\MATLAB\R2014b\rtw\c\src"  -I"F:\Users\Eric\Documents\MATLAB\rvctools\slprj\_sfprj\RobotPoseIntegration\_self\sfun\src" 
+ 
+
+RobotPoseIntegration_sfun.mexw64 : $(MAKEFILE) $(OBJECTS)
+	$(LD) $(LDFLAGS) -o RobotPoseIntegration_sfun.mexw64 @RobotPoseIntegration_sfun.lmko
+RobotPoseIntegration_sfun.obj :	"RobotPoseIntegration_sfun.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "RobotPoseIntegration_sfun.c"
+c1_RobotPoseIntegration.obj :	"c1_RobotPoseIntegration.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c1_RobotPoseIntegration.c"
+c2_RobotPoseIntegration.obj :	"c2_RobotPoseIntegration.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c2_RobotPoseIntegration.c"
+c3_RobotPoseIntegration.obj :	"c3_RobotPoseIntegration.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c3_RobotPoseIntegration.c"
+RobotPoseIntegration_sfun_registry.obj :	"RobotPoseIntegration_sfun_registry.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "RobotPoseIntegration_sfun_registry.c"
+lccstub.obj :	"C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\mex\lccstub.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\mex\lccstub.c"
